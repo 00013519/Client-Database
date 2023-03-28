@@ -1,0 +1,10 @@
+extends layout.pug 
+
+block content 
+    .container 
+        h1.intro-msg Welcome to the database of clients of Westminster private hospital, here you can find any information about both existing and ex-clients, you can add new clients, as well as delete and modify existing ones...
+        if success 
+            p.success The client is added
+            br
+        a.featured(href='/create') New client 
+        

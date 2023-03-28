@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content 
+    .container 
+        if active
+            h1 Active Clients
+            
+            if inactivated 
+                p.success Inactivated
+            each client in clients 
+                
+                div.note-wrapper
+                    a.client(href=`/clients/${client.id}`) #{ client.name }
+                    
+                    a.delete(href=`/inactivate/${client.id}`) Inactivate
+        if inactive 
+            h1 Inactive Clients
+            if deleted 
+                p.success Deleted 
+            each client in clients
+                div.note-wrapper
+                    a.client(href=`/inactive/${client.id}`) #{ client.name }  
+
+                    a.delete(href=`/delete/${client.id}`) Delete

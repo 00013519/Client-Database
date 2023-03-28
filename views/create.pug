@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content   
+    .container 
+        h1 Add a new client
+        if error 
+            p.error Some error occured. Try again!
+        
+        form.form(action="/create" method='POST')
+            label Full Name
+            input.input(type="text" name="name")
+
+            label Age 
+            input.input(type="number" name="age" )
+
+            label Description 
+            textarea.input(type="text" name="description") 
+
+            button.btn Add client
