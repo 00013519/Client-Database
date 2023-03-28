@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content   
+    .container
+        h1 Update the client
+            if error 
+                p.error Some error occured. Try again!
+            form.form(action=`/update/${client.id}` method='POST')
+               label Full Name
+                input.input(type="text" name="name" value=`${client.name}`)
+
+                label Age 
+                input.input(type="number" name="age" value=`${client.age}`)
+
+                label Description 
+                textarea.input(type="text" name="description") #{client.description} 
+
+                button.btn Save changes

@@ -5,6 +5,9 @@ block content
             if active
                 h1.name #{client.name}
                 h3.active Active
+                if updated
+                    br
+                    h3.active Updated
                 p.age   Age: #{client.age} years old
                 p.description Description: #{client.description}
                 br
@@ -16,5 +19,4 @@ block content
                 p.age   Age: #{client.age} years old
                 p.description Description: #{client.description}
                 br
-                a.update(href=`/update/${client.id}`) Update 
                 a.inactivate#delete(href=`/delete/${client.id}`) Delete
